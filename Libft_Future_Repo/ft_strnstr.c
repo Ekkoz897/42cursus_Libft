@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *strnstr(const char *str, const char *word, size_t n)
+char *ft_strnstr(const char *str, const char *word, size_t n)
 {
 	size_t	i;
 	size_t	j;

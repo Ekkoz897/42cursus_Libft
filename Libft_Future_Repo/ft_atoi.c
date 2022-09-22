@@ -1,8 +1,11 @@
+
+// Long because couldn't compile with int due #29, said condition is always false
+
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	i;
-	int	posneg;
+	long long	res;
+	int			i;
+	int			posneg;
 
 	res = 0;
 	i = 0;
@@ -26,6 +29,6 @@ int	ft_atoi(const char *str)
 			if (res < -2147483648)
 				return (0);
 		}
-		return (res);
 	}
+	return (res * posneg);
 }

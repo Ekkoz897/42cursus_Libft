@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *strdup(const char *s)
+char *ft_strdup(const char *s)
 {
 	char	*g;
 	int		i;
@@ -9,8 +9,8 @@ char *strdup(const char *s)
 	g = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (g == NULL)
 		return (NULL);
-	while (s[i])
-		g[i++] = s[i];
+	while (s[i++])
+		g[i] = s[i];
 	g[i] = '\0';
 	return (g);
 }
