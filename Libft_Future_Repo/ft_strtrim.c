@@ -1,4 +1,16 @@
-char *ft_strtrim(char const *s1, char const *set)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 11:43:15 by apereira          #+#    #+#             */
+/*   Updated: 2022/10/24 12:46:17 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
 	int		i;

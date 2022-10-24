@@ -1,13 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 11:41:50 by apereira          #+#    #+#             */
+/*   Updated: 2022/10/24 12:34:47 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
-
-
-/*
-**  Mandatory functions
-*/
+# include <unistd.h>
+# include <stdlib.h>
 
 int			ft_isascii(int c);
 int			ft_isalnum(int c);
@@ -37,8 +44,5 @@ void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 char		*ft_strdup(const char *s1);
 void		*ft_calloc(size_t count, size_t size);
-
-
-
 
 #endif

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 11:42:01 by apereira          #+#    #+#             */
+/*   Updated: 2022/10/24 11:47:30 by apereira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Long because couldn't compile with int due #29, said condition is always false
+// Long because couldn't compile with int, said condition is always false
 
 int	ft_atoi(const char *str)
 {
@@ -12,15 +23,12 @@ int	ft_atoi(const char *str)
 	posneg = 1;
 	while (str[i])
 	{
-		while ((str[i] >= 9 && str[i]<= 13) || str[i] == ' ')
+		while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 			i++;
-		while (str[i] == '-' || str[i] == '+')
-		{
+		while (str[i++] == '-' || str[i++] == '+')
 			if (str[i] == '-')
 				posneg = -1;
-			i++;
-		}
-		while (str[i] >= '0' && str[i]<= '9')
+		while (str[i] >= '0' && str[i] <= '9')
 		{
 			res = res * 10 + (str[i] - '0');
 			i++;
