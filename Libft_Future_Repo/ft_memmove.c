@@ -6,9 +6,11 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:42:39 by apereira          #+#    #+#             */
-/*   Updated: 2022/10/24 12:45:19 by apereira         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:10:04 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// a posicao do pointer e menor do que o outro, n e o tamanho do aray
 
 #include "libft.h"
 
@@ -18,23 +20,24 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*source;
 	unsigned char	*destino;
 
-	i = 0;
 	source = (unsigned char *)src;
 	destino = (unsigned char *)dest;
 	if (!destino & !source)
 		return (0);
-	if (source > destino)
+	if (source < destino)
 	{
+		i = n;
 		while (i-- > 0)
-		{
-			i = n;
 			destino[i] = source[i];
-		}
 	}
 	else
 	{
-		while (i++ < n)
+		i = 0;
+		while (i < n)
+		{
 			destino[i] = source[i];
+			i++;
+		}
 	}
 	return (dest);
 }
