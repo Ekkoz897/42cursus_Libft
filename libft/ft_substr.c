@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+// criar 2a str, com uma porção da string
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
