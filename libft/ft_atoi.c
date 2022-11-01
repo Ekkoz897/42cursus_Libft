@@ -12,6 +12,14 @@
 
 // Long because couldn't compile with int, said condition is always false
 
+/**
+ * It converts a string to an integer.
+ * 
+ * str The string to be converted.
+ * 
+ * res the number as an int.
+ */
+
 int	ft_atoi(const char *str)
 {
 	long long	res;

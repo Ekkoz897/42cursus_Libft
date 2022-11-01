@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/**
+ * It sets the first n bytes of the memory area pointed to by str to zero.
+ * 
+ *  str - pointer to the memory area to be filled.
+ *  n   - number of bytes to be zeroed.
+ */
+
 void	ft_bzero(void *str, size_t n)
 {
 	size_t			i;

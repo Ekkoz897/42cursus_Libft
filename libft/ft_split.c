@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/**
+ * It splits a string into words.
+ * 
+ * c - separator
+ *
+ */
 int	ft_conta(char *str, char c, int *i)
 {
 	int	j;

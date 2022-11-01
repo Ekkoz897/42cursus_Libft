@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/**
+ * It copies the string s into a new string g using malloc.
+ */
+
 char	*ft_strdup(const char *s)
 {
 	char	*g;

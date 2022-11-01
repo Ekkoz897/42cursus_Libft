@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+/**
+ * The function compares the first n bytes of the memory area s1 to the first n bytes of
+ * the memory area s2
+ * 
+ *  n  - The number of bytes to compare.
+ * 
+ * Returns The difference between the two strings.
+ */
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

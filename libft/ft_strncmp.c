@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/**
+ * It compares n characters of two strings and returns the difference 
+ * between the first two characters that are different.
+ */
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

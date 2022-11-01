@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ * If the first character of the word is found in the string, then check if the rest of the word is in
+ * the string
+ * 
+ * @param str The string to be searched.
+ * @param word the word to be found
+ * @param n the number of characters to be searched
+ * 
+ * @return The address of the first character of the substring.
+ */
+
 char	*ft_strnstr(const char *str, const char *word, size_t n)
 {
 	size_t	i;

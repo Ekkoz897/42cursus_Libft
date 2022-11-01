@@ -11,6 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/**
+ * It takes a string and a set of characters, and returns a copy of the string with the characters in
+ * the set removed from the beginning and end of the string
+ * 
+ * @param s1 The string to be trimmed.
+ * @param set the characters to be trimmed
+ * 
+ * @return A pointer to the trimmed string.
+ */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

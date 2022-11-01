@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/**
+ * Copy src, including the terminating null byte ('\0'), to dst.
+ * i - source length.
+ */
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

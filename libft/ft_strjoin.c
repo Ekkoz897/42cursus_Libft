@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+ * It takes two strings and joins them together using malloc.
+ */
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;

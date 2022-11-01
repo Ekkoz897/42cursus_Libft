@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ * It copies n bytes from src to dest.
+ * 
+ * dest - This is the destination array where the content is to be copied, type-casted to a
+ * pointer.
+ * src - pointer to the source.
+ * n - number of bytes to copy
+ * 
+ * @return a pointer to the destination.
+ */
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;

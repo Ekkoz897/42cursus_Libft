@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/**
+ * Appends src to the end of dst. It will append at most dstsize - strlen(dst) - 1 characters. It will then NUL-terminate.
+ */
+
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
