@@ -6,72 +6,86 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:56 by apereira          #+#    #+#             */
-/*   Updated: 2022/10/27 12:37:13 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:14:21 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-/**
- * It splits a string into words.
- * 
- * c - separator
- *
- */
-int	ft_conta(char *str, char c, int *i)
+int	ft_words(char const *str, char sep)
 {
-	int	j;
+	int		wd_nbr;
 
-	j = 0;
-	while (str[*i])
+	wd_nbr = 0;
+	if (!str)
+		return (0);
+	while (*str)
 	{
-		while (str[*i] != c)
-			i++;
-		while (str[*i] == c)
-			i++;
-		j++;
+		if (*str != sep)
+		{
+			while (*str && *str != sep)
+				str++;
+			wd_nbr++;
+		}
+		while (*str == sep)
+			str++;
 	}
-	return (j);
+	return (wd_nbr);
 }
 
-void	ft_copia(char *str, int i, char c, char **g)
+int	ft_chars(char const *str, char c)
+{
+	int	i;
+	int	counter;
+
+	i = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i])
+	{
+		counter++;
+		i++;
+	}
+	return (counter);
+}
+
+char	**ft_copia(char const *str, int i, char c, char **g)
 {
 	int	l;
-	int	k;
 	int	j;
+	int	word;
 
-	j = ft_conta(str, c, &i);
-	l = 0;
+	j = ft_words(str, c);
 	i = 0;
-	k = 0;
-	while (j > 0)
+	word = 0;
+	while (word < j)
 	{
-		while (str[i] == c)
-			i++;
 		l = 0;
-		while (str[i++] != c)
-			l++;
-		i -= l;
-		g[j] = malloc(sizeof(char) * l);
-		while (k <= l)
-		{
-			g[j][k] = str[i];
-			i++;
-			k++;
-		}
-		j--;
+		while (*str == c && str)
+			str++;
+		l = ft_chars(str + i, c);
+		g[word] = (char *)malloc(l + 1);
+		if (!g)
+			return (NULL);
+		ft_strlcpy(g[word], str, l + 1);
+		while (*str && *str != c)
+			str++;
+		word ++;
 	}
+	g[word] = NULL;
+	return (g);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**g;
-	char	*g1;
 
 	i = 0;
-	g1 = (char *)s;
-	g = malloc(sizeof(g1));
-	ft_copia(g1, i, c, g);
+	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
+	if (!g || !s)
+		return (NULL);
+	ft_copia(s, i, c, g);
 	return (g);
 }
