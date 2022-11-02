@@ -6,14 +6,15 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:42:10 by apereira          #+#    #+#             */
-/*   Updated: 2022/10/27 15:30:44 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:31:24 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * It allocates memory for an array of nmemb elements of size bytes each, and returns a pointer to the
+ * It allocates memory for an array of nmemb elements 
+ * of size bytes each, and returns a pointer to the
  * allocated memory. The memory is set to zero.
  * 
  *  nmemb - number of elements
