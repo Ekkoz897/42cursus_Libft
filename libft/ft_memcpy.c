@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:42:38 by apereira          #+#    #+#             */
-/*   Updated: 2022/10/24 12:42:35 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:01:51 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 /**
  * It copies n bytes from src to dest.
  * 
- * dest - This is the destination array where the content is to be copied, type-casted to a
+ * dest - This is the destination array where the 
+ * content is to be copied, type-casted to a
  * pointer.
  * src - pointer to the source.
  * n - number of bytes to copy
