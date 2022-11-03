@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/**
+ * It converts an integer to a string.
+ * 
+ * @param n the number to be converted
+ * 
+ * @return A pointer to a string.
+ */
+
 int	ft_digit(int n)
 {
 	int	c;
