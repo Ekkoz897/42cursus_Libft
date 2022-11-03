@@ -1,15 +1,20 @@
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
 	size_t	i;
 
-	str = ft_itoa(n);
-	i = 0;
-	while (str[i])
+	if (n < 0)
 	{
-		write(fd, str[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		i = -n;
 	}
+	else
+		i = n;
+	if (i > 9)
+	{
+		ft_putnbr_fd(i / 10, fd);
+		i %= 10;
+	}
+	ft_putchar_fd(i + '0', fd);
 }
