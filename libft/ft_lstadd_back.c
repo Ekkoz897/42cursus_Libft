@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/**
+ * Adds a new element to the end of a linked list
+ * 
+ * @param lst a pointer to a pointer to a linked list
+ * @param new the new element to add to the list
+ */
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (*lst == NULL)

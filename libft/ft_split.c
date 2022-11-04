@@ -10,8 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+
+/**
+ * It splits a string into words.
+ * 
+ */
 
 int	ft_words(char const *str, char sep)
 {

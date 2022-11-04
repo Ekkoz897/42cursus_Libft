@@ -1,4 +1,12 @@
 #include "libft.h"
+/**
+ * It prints the number as a string to the file descriptor.
+ * 
+ * @param n The number to be printed
+ * @param fd file descriptor
+ * 
+ * @return nothing.
+ */
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ * Iterate through the string `s` and apply 
+ * the function `f` to each character, passing the index of
+ * the character as the first argument
+ * 
+ * @param s The string to iterate over
+ * @param f function pointer
+ * 
+ * @return Nothing.
+ */
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;

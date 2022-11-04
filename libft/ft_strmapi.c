@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+/**
+ * Applies the function f to every element of the string
+ * 
+ * @param s The string to map.
+ * @param f function pointer
+ * 
+ * @return A pointer to a new string.
+ */
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/**
+ * It returns the last element of a list.
+ * 
+ * @param lst A pointer to the first link of a list.
+ * 
+ * @return The last element of the list.
+ */
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

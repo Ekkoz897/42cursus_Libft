@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/**
+ * It calls the function on the content of the linked list
+ * 
+ * @param lst The list to be deleted.
+ * @param del pointer to a function
+ */
+
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (del == NULL)

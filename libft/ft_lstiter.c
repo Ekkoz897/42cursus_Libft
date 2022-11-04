@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/**
+ * Iterate through a linked list and apply a function to each element
+ * 
+ * @param lst a pointer to the first element of a linked list
+ * @param f a function that takes a void pointer and returns nothing
+ */
+
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;

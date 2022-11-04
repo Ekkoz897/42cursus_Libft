@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/**
+ * It creates a new list element.
+ * 
+ * @param content The content to put in the new element.
+ * 
+ * @return A pointer to a new list element.
+ */
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*abel;
