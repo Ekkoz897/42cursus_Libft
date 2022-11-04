@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 14:02:19 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/04 14:02:20 by apereira         ###   ########.fr       */
+/*   Created: 2022/11/04 15:28:57 by apereira          #+#    #+#             */
+/*   Updated: 2022/11/04 15:44:15 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * Ft_putchar_fd() writes a character to a file descriptor
- * 
- * @param c the character to print
- * @param fd file descriptor
- */
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	write(fd, &c, 1);
+	if (del == NULL)
+		return ;
+	if (lst != NULL)
+		del(lst->content);
 }

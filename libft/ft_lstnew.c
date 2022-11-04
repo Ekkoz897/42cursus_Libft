@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 14:02:19 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/04 14:02:20 by apereira         ###   ########.fr       */
+/*   Created: 2022/11/04 13:57:30 by apereira          #+#    #+#             */
+/*   Updated: 2022/11/04 14:02:41 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * Ft_putchar_fd() writes a character to a file descriptor
- * 
- * @param c the character to print
- * @param fd file descriptor
- */
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write(fd, &c, 1);
+	t_list	*abel;
+
+	abel = malloc(sizeof(t_list));
+	if (!abel)
+		return (NULL);
+	abel->content = content;
+	return (abel);
 }
