@@ -6,13 +6,14 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:43:15 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/02 18:22:16 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:39:19 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /**
- * It takes a string and a set of characters, and returns a copy of the string with the characters in
+ * It takes a string and a set of characters, 
+ * and returns a copy of the string with the characters in
  * the set removed from the beginning and end of the string
  * 
  * @param s1 The string to be trimmed.
