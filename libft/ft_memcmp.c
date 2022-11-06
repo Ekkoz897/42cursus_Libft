@@ -13,8 +13,8 @@
 #include "libft.h"
 
 /**
- * The function compares the first n bytes of the memory area s1 to the first n bytes of
- * the memory area s2
+ * The function compares the first n bytes of the memory area s1 to 
+ * the first n bytes of the memory area s2
  * 
  *  n  - The number of bytes to compare.
  * 

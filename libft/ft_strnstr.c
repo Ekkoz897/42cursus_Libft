@@ -13,8 +13,8 @@
 #include "libft.h"
 
 /**
- * If the first character of the word is found in the string, then check if the rest of the word is in
- * the string
+ * If the first character of the word is found in the string, then check if the 
+ * rest of the word is in the string.
  * 
  * @param str The string to be searched.
  * @param word the word to be found
