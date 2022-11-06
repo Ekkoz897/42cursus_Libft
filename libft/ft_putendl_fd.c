@@ -21,7 +21,7 @@
  * @return nothing.
  */
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 

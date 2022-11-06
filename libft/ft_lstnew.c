@@ -22,11 +22,13 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*abel;
+	t_list	*new;
 
-	abel = malloc(sizeof(t_list));
-	if (!abel)
+	if (!content)
+		return (0);
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	abel->content = content;
-	return (abel);
+	new->content = content;
+	return (new);
 }
