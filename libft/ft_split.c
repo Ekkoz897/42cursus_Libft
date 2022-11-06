@@ -44,6 +44,7 @@ int	ft_chars(char const *str, char c)
 	int	counter;
 
 	i = 0;
+	counter = 0;
 	while (str[i] == c)
 		i++;
 	while (str[i] != c && str[i])
