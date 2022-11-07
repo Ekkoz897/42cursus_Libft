@@ -17,66 +17,116 @@
  * 
  */
 
-int	ft_words(char const *str, char sep)
-{
-	int		wd_nbr;
+// int	ft_words(char const *str, char sep)
+// {
+// 	int		wd_nbr;
 
-	wd_nbr = 0;
-	while (*str)
+// 	wd_nbr = 0;
+// 	while (*str)
+// 	{
+// 		if (*str != sep)
+// 		{
+// 			while (*str && *str != sep)
+// 				str++;
+// 			wd_nbr++;
+// 		}
+// 		while (*str == sep)
+// 			str++;
+// 	}
+// 	return (wd_nbr);
+// }
+
+// int	ft_chars(char const *str, char c)
+// {
+// 	int	i;
+// 	int	counter;
+
+// 	i = 0;
+// 	counter = 0;
+// 	while (str[i] != c && str[i])
+// 	{
+// 		counter++;
+// 		i++;
+// 	}
+// 	return (counter);
+// }
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**g;
+// 	size_t	i;
+// 	size_t	l;
+// 	int		word;
+// 	char	*str;
+
+// 	i = 0;
+// 	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
+// 	if (!g || !s)
+// 		return (NULL);
+// 	word = 0;
+// 	while (s[i])
+// 	{
+// 		while (s[i] && s[i] == c)
+// 			i++;
+// 		if (s[i] != '\0' && s[i] != c)
+// 		{
+// 			str = (char *)s + i;
+// 			l = ft_chars(str, c);
+// 			g[word] = ft_substr(s, i, l);
+// 			i += l;
+// 			word ++;
+// 		}
+// 	}
+// 	g[word] = NULL;
+// 	return (g);
+// }
+
+static size_t	char_counter(char const *s, char c)
+{
+	size_t	count;
+
+	if (!s)
+		return (0);
+	count = 0;
+	while (*s)
 	{
-		if (*str != sep)
+		if (*s != c)
 		{
-			while (*str && *str != sep)
-				str++;
-			wd_nbr++;
+			count++;
+			while (*s && *s != c)
+				s++;
 		}
-		while (*str == sep)
-			str++;
+		else
+			s++;
 	}
-	return (wd_nbr);
-}
-
-int	ft_chars(char const *str, char c)
-{
-	int	i;
-	int	counter;
-
-	i = 0;
-	counter = 0;
-	while (str[i] != c && str[i])
-	{
-		counter++;
-		i++;
-	}
-	return (counter);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**g;
-	size_t	i;
-	int		l;
-	int		word;
+	char	**dst;
 	char	*str;
+	size_t	i;
 
+	dst = (char **)malloc(sizeof(char *) * char_counter(s, c) + 1);
+	if (!s || !dst)
+		return (0);
 	i = 0;
-	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
-	if (!g || !s)
-		return (NULL);
-	word = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] != '\0' && s[i] != c)
+		if (*s != c)
 		{
-			str = (char *)s + i;
-			l = ft_chars(str, c);
-			g[word] = ft_substr(s, i, l);
-			i += l;
-			word ++;
+			str = (char *)s;
+			while (*s && *s != c)
+				s++;
+			dst[i] = (char *)malloc(s - str + 1);
+			if (!dst)
+				return (0);
+			ft_strlcpy(dst[i++], str, s - str + 1);
 		}
+		else
+			s++;
 	}
-	g[word] = NULL;
-	return (g);
+	dst[i] = 0;
+	return (dst);
 }
