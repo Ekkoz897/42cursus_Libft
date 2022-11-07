@@ -51,36 +51,32 @@ int	ft_chars(char const *str, char c)
 	return (counter);
 }
 
-char	**ft_copia(char const *s, char c, size_t i, char **g)
-{
-	int		l;
-	int		word;
-	char	*str;
-
-	word = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		str = (char *)s + i;
-		l = ft_chars(str, c);
-		g[word] = ft_substr(s, i, l);
-		i += l;
-		word ++;
-	}
-	g[word] = NULL;
-	return (g);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**g;
 	size_t	i;
+	int		l;
+	int		word;
+	char	*str;
 
 	i = 0;
 	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
 	if (!g || !s)
 		return (NULL);
-	ft_copia (s, c, i, g);
+	word = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] != '\0' && s[i] != c)
+		{
+			str = (char *)s + i;
+			l = ft_chars(str, c);
+			g[word] = ft_substr(s, i, l);
+			i += l;
+			word ++;
+		}
+	}
+	g[word] = NULL;
 	return (g);
 }
