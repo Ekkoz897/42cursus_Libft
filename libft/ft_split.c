@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	char	*str;
 
 	i = 0;
-	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
+	g = (char **)malloc(sizeof(char *) * (ft_words(s, c) + 1));
 	if (!g || !s)
 		return (NULL);
 	word = 0;
@@ -72,9 +72,8 @@ char	**ft_split(char const *s, char c)
 		{
 			str = (char *)s + i;
 			l = ft_chars(str, c);
-			g[word] = ft_substr(s, i, l);
+			g[word++] = ft_substr(s, i, l);
 			i += l;
-			word ++;
 		}
 	}
 	g[word] = 0;
