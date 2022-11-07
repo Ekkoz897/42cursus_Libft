@@ -22,8 +22,6 @@ int	ft_words(char const *str, char sep)
 	int		wd_nbr;
 
 	wd_nbr = 0;
-	if (!str)
-		return (0);
 	while (*str)
 	{
 		if (*str != sep)
@@ -45,8 +43,6 @@ int	ft_chars(char const *str, char c)
 
 	i = 0;
 	counter = 0;
-	while (str[i] == c)
-		i++;
 	while (str[i] != c && str[i])
 	{
 		counter++;
@@ -55,27 +51,21 @@ int	ft_chars(char const *str, char c)
 	return (counter);
 }
 
-char	**ft_copia(char const *str, int i, char c, char **g)
+char	**ft_copia(char const *s, char c, size_t i, char **g)
 {
-	int	l;
-	int	j;
-	int	word;
+	int		l;
+	int		word;
+	char	*str;
 
-	j = ft_words(str, c);
-	i = 0;
 	word = 0;
-	while (word < j)
+	while (s[i])
 	{
-		l = 0;
-		while (*str == c && str)
-			str++;
-		l = ft_chars(str + i, c);
-		g[word] = (char *)malloc(l + 1);
-		if (!g)
-			return (NULL);
-		ft_strlcpy(g[word], str, l + 1);
-		while (*str && *str != c)
-			str++;
+		while (s[i] == c)
+			i++;
+		str = (char *)s + i;
+		l = ft_chars(str, c);
+		g[word] = ft_substr(s, i, l);
+		i += l;
 		word ++;
 	}
 	g[word] = NULL;
@@ -84,13 +74,13 @@ char	**ft_copia(char const *str, int i, char c, char **g)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
 	char	**g;
+	size_t	i;
 
 	i = 0;
 	g = (char **)malloc(sizeof(char *) * ft_words(s, c) + 1);
 	if (!g || !s)
 		return (NULL);
-	ft_copia(s, i, c, g);
+	ft_copia (s, c, i, g);
 	return (g);
 }
