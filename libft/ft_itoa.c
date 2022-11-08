@@ -20,7 +20,7 @@
  * @return A pointer to a string.
  */
 
-int	ft_digit(int n)
+int	ft_digits(int n)
 {
 	int	c;
 
@@ -38,29 +38,29 @@ int	ft_digit(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*p;
+	char	*array;
 	int		digits;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
-		digits = ft_digit(n) + 1;
+		digits = ft_digits(n) + 1;
 	else
-		digits = ft_digit(n);
-	p = malloc(sizeof(char) * digits + 1);
-	if (!p)
+		digits = ft_digits(n);
+	array = malloc(sizeof(char) * digits + 1);
+	if (!array)
 		return (NULL);
 	if (n < 0)
-		p[0] = '-';
+		array[0] = '-';
 	if (n < 0)
 		n = -n;
 	if (n == 0)
-		p[0] = '0';
-	p[digits] = '\0';
+		array[0] = '0';
+	array[digits] = '\0';
 	while (n != 0 && digits >= 0)
 	{
-		p[digits-- - 1] = n % 10 + '0';
+		array[digits-- - 1] = n % 10 + '0';
 		n /= 10;
 	}
-	return (p);
+	return (array);
 }

@@ -19,16 +19,16 @@
  * 
  *  nmemb - number of elements
  *  size  -  size of the memory block, in bytes.
- *  g - A pointer to the allocated memory.
+ *  array - A pointer to the allocated memory.
  */
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	*g;
+	size_t	*array;
 
-	g = malloc(size * nmemb);
-	if (!g)
+	array = malloc(size * nmemb);
+	if (!array)
 		return (NULL);
-	ft_bzero(g, (size * nmemb));
-	return (g);
+	ft_bzero(array, (size * nmemb));
+	return (array);
 }
