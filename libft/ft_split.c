@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:56 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/01 17:14:21 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/09 15:56:18 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,34 @@
  * 
  */
 
-int	ft_words(char const *str, char sep)
+static int	ft_words(char const *str, char sep)
 {
 	int		wd_nbr;
 
 	wd_nbr = 0;
 	while (*str)
 	{
-		if (*str != sep)
+		if (*str != sep && *str)
 		{
 			while (*str && *str != sep)
 				str++;
 			wd_nbr++;
 		}
-		while (*str == sep)
+		while (*str == sep && *str)
 			str++;
 	}
 	return (wd_nbr);
 }
 
-int	ft_chars(char const *str, char c)
+static int	ft_chars(char const *str, char c)
 {
-	int	i;
 	int	counter;
 
-	i = 0;
 	counter = 0;
-	while (str[i] != c && str[i])
+	while (*str != c && *str != '\0')
 	{
 		counter++;
-		i++;
+		str++;
 	}
 	return (counter);
 }
@@ -64,11 +62,11 @@ char	**ft_split(char const *s, char c)
 	if (!g || !s)
 		return (NULL);
 	word = 0;
-	while (s[i])
+	while (*(s + i))
 	{
-		while (s[i] && s[i] == c)
+		while (*(s + i) && *(s + i) == c)
 			i++;
-		if (s[i] != '\0' && s[i] != c)
+		if (*(s + i) && *(s + i) != c)
 		{
 			str = (char *)s + i;
 			l = ft_chars(str, c);
@@ -76,6 +74,6 @@ char	**ft_split(char const *s, char c)
 			i += l;
 		}
 	}
-	g[word] = 0;
+	g[word] = NULL;
 	return (g);
 }
