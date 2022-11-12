@@ -34,10 +34,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = 0;
 	while (i < ft_strlen(s) && len > 0)
 	{
-		sub[j] = s[i];
+		sub[j++] = s[i++];
 		len--;
-		j++;
-		i++;
 	}
 	sub[j] = '\0';
 	return (sub);

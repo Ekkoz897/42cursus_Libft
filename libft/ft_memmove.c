@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	source = (unsigned char *)src;
 	destino = (unsigned char *)dest;
-	if (!destino & !source)
+	if (!destino && !source)
 		return (0);
 	if (source < destino)
 	{

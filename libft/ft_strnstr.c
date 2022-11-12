@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *str, const char *word, size_t n)
 	i = 0;
 	if (word[i] == '\0')
 		return ((char *)str);
-	while ((i < n) && (str[i] != '\0'))
+	while ((i < n) && (str[i]))
 	{
 		j = 0;
 		while (str[i + j] == word[j] && ((i + j) < n))

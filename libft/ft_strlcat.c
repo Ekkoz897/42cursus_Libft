@@ -15,6 +15,8 @@
 /*
  * Appends src to the end of dst. It will append 
  * at most dstsize - strlen(dst) - 1 characters. It will then NUL-terminate.
+ * 
+ * size - max dest size 
  */
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
@@ -27,11 +29,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		return (size + ft_strlen(src));
 	j = 0;
 	while (src[j] != '\0' && i < (size - 1))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
+		dest[i++] = src[j++];
 	dest[i] = '\0';
 	return (ft_strlen(dest) + ft_strlen(&src[j]));
 }

@@ -33,7 +33,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	source = (unsigned char *)src;
 	destino = (unsigned char *)dest;
-	if (!dest & !src)
+	if (!dest && !src)
 		return (0);
 	while (i < n)
 	{

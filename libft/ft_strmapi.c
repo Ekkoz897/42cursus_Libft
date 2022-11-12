@@ -24,19 +24,19 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*str;
+	char			*newstr;
 
 	if (!s || !f)
 		return (NULL);
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!str)
+	newstr = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!newstr)
 		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		str[i] = f(i, s[i]);
+		newstr[i] = f(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	newstr[i] = '\0';
+	return (newstr);
 }
