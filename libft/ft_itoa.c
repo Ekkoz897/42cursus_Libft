@@ -51,17 +51,15 @@ char	*ft_itoa(int n)
 	if (!array)
 		return (NULL);
 	if (n < 0)
-	{
 		array[0] = '-';
+	if (n < 0)
 		n = -n;
-	}
 	if (n == 0)
 		array[0] = '0';
 	array[digits] = '\0';
 	while (n != 0 && digits >= 0)
 	{
-		array[digits - 1] = n % 10 + '0';
-		digits--;
+		array[digits-- - 1] = n % 10 + '0';
 		n /= 10;
 	}
 	return (array);
