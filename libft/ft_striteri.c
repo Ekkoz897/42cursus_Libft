@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:13:06 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/09 19:51:10 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:01:01 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	if (!s)
 		return ;
 	while (s[i])
-		f(i, &s[i++]);
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

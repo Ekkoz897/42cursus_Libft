@@ -6,7 +6,7 @@
 /*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:46:26 by apereira          #+#    #+#             */
-/*   Updated: 2022/11/09 19:49:53 by apereira         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:02:34 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,15 @@ char	*ft_itoa(int n)
 	if (!array)
 		return (NULL);
 	if (n < 0)
-	{
 		array[0] = '-';
+	if (n < 0)
 		n = -n;
-	}
 	if (n == 0)
 		array[0] = '0';
 	array[digits] = '\0';
 	while (n != 0 && digits >= 0)
 	{
-		array[digits - 1] = n % 10 + '0';
-		digits--;
+		array[digits-- - 1] = n % 10 + '0';
 		n /= 10;
 	}
 	return (array);
